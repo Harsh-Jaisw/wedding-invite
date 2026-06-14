@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CurtainOpener from "./components/CurtainOpener";
 import HeroPage from "./components/HeroPage";
 import InviteCard from "./components/InviteCard";
@@ -19,6 +19,14 @@ const sideConfig   = (await import(`./couples/${couple}/${side}/config.js`)).def
 
 export default function App() {
   const [opened, setOpened] = useState(false);
+  const audioRef = useRef(null);
+  const handleOpen = () => {
+    // Play audio on same user click — browser allows it
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {});
+    }
+    setOpened(true);
+  };
 
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
@@ -26,8 +34,14 @@ export default function App() {
       <StarBackground />
 
       {/* Audio — fixed button, always visible after open */}
+      <audio
+        ref={audioRef}
+        src="/audio/wedding-instrumental.mpeg"
+        loop
+      />
+      
       {opened && (
-        <AudioPlayer src="/audio/wedding-instrumental.mpeg" />
+        <AudioPlayer audioRef={audioRef} />
       )}
 
       {!opened ? (
@@ -35,7 +49,7 @@ export default function App() {
         <CurtainOpener
           common={commonConfig}
           sideConfig={sideConfig}
-          onOpen={() => setOpened(true)}
+          onOpen={handleOpen}
         />
       ) : (
         // After open: full scroll experience
