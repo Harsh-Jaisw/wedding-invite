@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/CountdownTimer.css";
+import "../styles/CountDownTimer.css";
 
 function getTimeLeft(targetDate) {
   const diff = new Date(targetDate) - new Date();
