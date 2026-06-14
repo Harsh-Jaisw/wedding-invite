@@ -16,9 +16,11 @@ export default function InviteCard({ common, sideConfig }) {
         <span className="corner bl" />
         <span className="corner br" />
 
-        <p className="family-names">
-          Mr. &amp; Mrs. {isBride ? "Mishra" : "Bajpai"} &nbsp;·&nbsp; Mr. &amp; Mrs. {isBride ? "Bajpai" : "Mishra"}
-        </p>
+        <div className="family-names">
+          <span>Mr. &amp; Mrs. {isBride ? "Mishra" : "Bajpai"}</span> 
+          <span className="ampersand"> &amp; </span> 
+          <span>Mr. &amp; Mrs. {isBride ? "Bajpai" : "Mishra"}</span>
+        </div>
         <p className="request-text">
           request the honour of your presence at the wedding of their beloved children
         </p>

@@ -193,5 +193,10 @@
     flex-direction:column;
     gap:8px;
   }
+
+  .family-names {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
