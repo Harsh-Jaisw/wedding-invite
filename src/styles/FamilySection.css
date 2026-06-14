@@ -1,0 +1,124 @@
+.family-section {
+  /* width: 100%; */
+  min-height: 100vh;
+  background:#1a0505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.family-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #DAA520;
+  margin: 0 0 10px;
+}
+
+.family-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAA520, transparent);
+  margin: 0 auto 40px;
+}
+
+/* ── Cards row ── */
+.family-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 780px;
+  width: 100%;
+}
+
+/* ── Card ── */
+.family-card {
+  position: relative;
+  background: rgba(80, 10, 10, 0.5);
+  border: 1px solid rgba(218, 165, 32, 0.25);
+  border-radius: 4px;
+  padding: 28px 22px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+/* Corners */
+.corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: #DAA520;
+  border-style: solid;
+  opacity: 0.6;
+}
+.corner.tl { top: 8px;    left: 8px;  border-width: 1px 0 0 1px; }
+.corner.tr { top: 8px;    right: 8px; border-width: 1px 1px 0 0; }
+.corner.bl { bottom: 8px; left: 8px;  border-width: 0 0 1px 1px; }
+.corner.br { bottom: 8px; right: 8px; border-width: 0 1px 1px 0; }
+
+.family-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.family-label-line {
+  height: 1px;
+  width: 50px;
+  margin: 0 auto 16px;
+}
+
+.family-parents {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 3.5vw, 17px);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.family-members {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.family-member-row {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(13px, 3vw, 15px);
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.member-relation {
+  color: rgba(255,255,255,0.4);
+  font-size: clamp(11px, 2.5vw, 13px);
+}
+
+/* ── Mobile ── */
+@media (max-width: 560px) {
+  .family-cards {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}

@@ -8,6 +8,8 @@ import GalleryCarousel  from "./components/GalleryCarousel";
 import RSVPForm from "./components/RSVPForm";
 import StarBackground from "./components/StarBackground";
 import AudioPlayer from "./components/AudioPlayer";
+import FamilySection      from "./components/FamilySection"
+import CuteInviteSection  from "./components/CuteInviteSection";
 
 const couple = import.meta.env.VITE_COUPLE || "rahul-priya";
 const side   = import.meta.env.VITE_SIDE   || "bride";
@@ -46,16 +48,23 @@ export default function App() {
             common={commonConfig}
             sideConfig={sideConfig}
           />
-          {/* Section 3: Love Story */}
+
+          {/* Section 3: Family Section */}
+          <FamilySection common={commonConfig} />
+
+          {/* Section 4: Love Story */}
           <LoveStory common={commonConfig} />
 
-          {/* Section 4: Venue */}
+          {/* Section 5: Venue */}
           <VenueSection common={commonConfig} />
 
-          {/* Section 5: Gallery */}
+          {/* Section 6: Gallery */}
           <GalleryCarousel common={commonConfig} />
 
-          {/* Section 6: RSVP */}
+          {/* Section 7: Cute Invite */}
+          <CuteInviteSection  common={commonConfig} sideConfig={sideConfig} />
+
+          {/* Section 8: RSVP */}
           <RSVPForm common={commonConfig} />
         </div>
       )}
