@@ -1,0 +1,157 @@
+.love-story-section {
+  /* width: 100%; */
+  min-height: 100vh;
+  background: #1a0505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.love-story-section::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139,0,0,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ls-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #DAA520;
+  margin: 0 0 10px;
+}
+
+.ls-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAA520, transparent);
+  margin: 0 auto 50px;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #DAA520 10%, #DAA520 90%, transparent);
+}
+
+/* ── Timeline item ── */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+  /* padding-right: calc(50% + 28px); */
+}
+.timeline-item.right {
+  justify-content: flex-end;
+  /* padding-left: calc(50% + 28px); */
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #DAA520;
+  border: 2px solid #0d0202;
+  box-shadow: 0 0 10px rgba(218,165,32,0.5);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+/* ── Card ── */
+.timeline-card {
+  background: rgba(80,10,10,0.5);
+  border: 1px solid rgba(218,165,32,0.25);
+  border-radius: 4px;
+  padding: 18px 20px;
+  max-width: 280px;
+  text-align: left;
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+.timeline-year {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #DAA520;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.timeline-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── Mobile: stack single column ── */
+@media (max-width: 580px) {
+  .timeline-line { left: 16px; }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 44px;
+    padding-right: 0;
+  }
+
+  .timeline-dot {
+    left: 16px;
+  }
+
+  .timeline-card {
+    max-width: 100%;
+  }
+}

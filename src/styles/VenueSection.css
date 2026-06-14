@@ -1,0 +1,150 @@
+.venue-section {
+  /* width: 100%; */
+  min-height: 100vh;
+  background: #1a0505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.venue-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139,0,0,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.venue-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #DAA520;
+  margin: 0 0 10px;
+}
+
+.venue-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAA520, transparent);
+  margin: 0 auto 40px;
+}
+
+/* ── Body: map + details side by side ── */
+.venue-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 900px;
+  width: 100%;
+  align-items: center;
+}
+
+/* ── Map ── */
+.venue-map {
+  border: 1px solid rgba(218,165,32,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+}
+.venue-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── Details ── */
+.venue-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.venue-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.venue-gold-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(to right, #DAA520, transparent);
+}
+
+.venue-address {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #DAA520;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.venue-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.directions-btn {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1a0a0a;
+  background: linear-gradient(135deg, #DAA520, #FFD700);
+  padding: 12px 24px;
+  border-radius: 2px;
+  margin-top: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(218,165,32,0.3);
+}
+.directions-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 22px rgba(218,165,32,0.5);
+}
+
+@media (max-width: 680px) {
+  .venue-body {
+    grid-template-columns: 1fr;
+  }
+  .venue-details {
+    align-items: center;
+    text-align: center;
+  }
+  .venue-gold-line {
+    background: linear-gradient(to right, transparent, #DAA520, transparent);
+    width: 60px;
+  }
+}

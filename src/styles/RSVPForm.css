@@ -1,0 +1,192 @@
+.rsvp-section {
+  /* width: 100%; */
+  min-height: 100vh;
+  background: #1a0505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rsvp-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(139,0,0,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.section-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #DAA520;
+  margin: 0 0 10px;
+}
+
+.rsvp-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+}
+
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DAA520, transparent);
+  margin: 0 auto 40px;
+}
+
+/* ── RSVP Card ── */
+.rsvp-card {
+  position: relative;
+  background: rgba(80, 10, 10, 0.55);
+  border: 1px solid rgba(218, 165, 32, 0.35);
+  border-radius: 4px;
+  padding: 36px 28px;
+  max-width: 780px;
+  width: 100%;
+  backdrop-filter: blur(6px);
+}
+
+.corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #DAA520;
+  border-style: solid;
+  opacity: 0.7;
+}
+.corner.tl { top: 10px; left: 10px;  border-width: 1px 0 0 1px; }
+.corner.tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
+.corner.bl { bottom: 10px; left: 10px;  border-width: 0 0 1px 1px; }
+.corner.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+
+.rsvp-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+/* ── Form ── */
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(218,165,32,0.25);
+  border-radius: 3px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+  font-size: 11px;
+}
+.form-group select option {
+  background: #1a0505;
+  color: #fff;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: rgba(218,165,32,0.7);
+}
+
+.rsvp-submit-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #1a0a0a;
+  background: linear-gradient(135deg, #DAA520, #FFD700);
+  border: none;
+  border-radius: 2px;
+  padding: 14px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(218,165,32,0.3);
+}
+.rsvp-submit-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 22px rgba(218,165,32,0.5);
+}
+
+/* ── Success state ── */
+.rsvp-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.success-icon {
+  font-size: 48px;
+  color: #DAA520;
+  animation: heartbeat 1.6s ease-in-out infinite;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+.rsvp-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+@media (max-width: 420px) {
+  .form-row { grid-template-columns: 1fr; }
+  .rsvp-card { padding: 28px 16px; }
+}
