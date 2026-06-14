@@ -13,9 +13,9 @@ const groomConfig = {
     { relation: "Mother", name: "Mamta Bajpai" }
   ],
   events: [
-    { name: "Yagyopavit sanskar", date: "25/06/26(11:00 am)", venue: "Verma House, Delhi" },
-    { name: "Tilak ceremony",  date: "01/07/26(07:00 pm)", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
-    { name: "Wedding", date: "01/07/26(08:00 pm)", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
+    { name: "Yagyopavit sanskar", date: "25/06/26",time: "11 AM", venue: "Verma House, Delhi" },
+    { name: "Tilak ceremony",  date: "01/07/26",time: "07 PM", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
+    { name: "Wedding", date: "01/07/26",time: "08 PM", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
   ],
 };
 

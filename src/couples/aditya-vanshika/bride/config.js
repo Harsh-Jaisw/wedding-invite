@@ -14,9 +14,9 @@ const brideConfig = {
     { relation: "Brother", name: "Mishra" },
   ],
   events: [
-    { name: "Mehendi", date: "Dec 10", time: "4 PM", venue: "Mishra House, kanpur" },
-    { name: "Sangeet", date: "Dec 10", time: "4 PM", venue: "Mishra House, kanpur" },
-    { name: "Wedding", date: "Dec 10", time: "4 PM", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
+    { name: "Mehendi", date: "30/06/26", time: "06 PM", venue: "Society Dharamshala Pando Nagar, kanpur" },
+    { name: "Haldi", date: "30/06/26", time: "07 PM", venue: "Society Dharamshala Pando Nagar, kanpur" },
+    { name: "Wedding", date: "01/07/26", time: "08 PM", venue: "New Rahul Castle Banquet and Lawn, MIG road panki Kanpur" },
   ],
 };
 

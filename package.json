@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "dev:bride": "vite --mode bride",
     "dev:groom": "vite --mode groom",
     "build:bride": "vite build --mode bride",
