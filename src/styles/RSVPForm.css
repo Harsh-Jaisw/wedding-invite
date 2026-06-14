@@ -191,7 +191,7 @@
   .rsvp-card { padding: 28px 16px; }
 }
 
-@media (min-width: 400px) {
+@media (max-width: 480px) {
   .rsvp-card { 
     max-width: none;
     width: 90%;
