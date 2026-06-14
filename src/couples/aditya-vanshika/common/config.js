@@ -37,12 +37,35 @@ groom: "Aditya",
         "/couples/aditya-vanshika/ad-va-img1.jpg",
         "/couples/aditya-vanshika/ad-va-img2.jpg",
         "/couples/aditya-vanshika/ad-va-img3.jpg",
+        "/couples/aditya-vanshika/ad-va-img4.jpg",
+        "/couples/aditya-vanshika/ad-va-img5.jpg",
         "/couples/aditya-vanshika/ad-va-enagaged.jpg",
         "/couples/aditya-vanshika/ad-va-cake-cutting.jpg",
     ],
 
     images: {
     heroBg: "/couples/aditya-vanshika/ad-va-img1.jpg",
+    bride:  "/couples/aditya-vanshika/bride.jpg",
+    groom:  "/couples/aditya-vanshika/groom.jpg",
+    },
+
+    families: {
+        groom: {
+            label: "Groom's Family",
+            parents: "Mr. Virendra & Mrs. Mamta Verma",
+            members: [
+                { name: "Late. Shri Ram jivan bajpai ", relation: "Grandfather" },
+                { name: "Late. Shrmimati Shyama devi",   relation: "Grandmother" }
+            ],
+        },
+        bride: {
+            label: "Bride's Family",
+            parents: "Mr. Gaurav & Mrs. Vandana Mishra",
+            members: [
+                { name: "Late. Shri shanti prakash mishra ",   relation: "Grandfather" },
+                { name: "Shrimati Manju mishra",  relation: "Grandmother" }
+            ],
+        },
     },
 };
 
