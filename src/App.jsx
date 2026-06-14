@@ -6,6 +6,7 @@ import LoveStory from "./components/LoveStory";
 import VenueSection from "./components/VenueSection";
 import GalleryCarousel  from "./components/GalleryCarousel";
 import RSVPForm from "./components/RSVPForm";
+import StarBackground from "./components/StarBackground";
 // import AudioPlayer from "./components/AudioPlayer";
 
 const couple = import.meta.env.VITE_COUPLE || "rahul-priya";
@@ -19,6 +20,8 @@ export default function App() {
 
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
+
+      <StarBackground />
 
       {/* Audio — fixed button, always visible after open */}
       {/* {opened && (

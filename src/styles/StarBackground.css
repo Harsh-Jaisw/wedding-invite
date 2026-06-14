@@ -1,0 +1,57 @@
+.star-container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+/* ── Star base ── */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  animation: blink linear infinite;
+}
+
+/* ── Sizes ── */
+.star-sm {
+  width: 1px;
+  height: 1px;
+  opacity: 0.4;
+}
+.star-md {
+  width: 2px;
+  height: 2px;
+  opacity: 0.6;
+}
+.star-lg {
+  width: 3px;
+  height: 3px;
+  opacity: 0.9;
+  box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.6);
+}
+
+/* ── Blink animation ── */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* ── Gold stars (sprinkled few) ── */
+.star:nth-child(7n) {
+  background: #DAA520;
+  box-shadow: 0 0 4px 1px rgba(218, 165, 32, 0.5);
+}
+.star:nth-child(13n) {
+  background: #FFD700;
+  box-shadow: 0 0 6px 2px rgba(255, 215, 0, 0.4);
+}
