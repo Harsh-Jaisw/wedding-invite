@@ -7,7 +7,7 @@ import VenueSection from "./components/VenueSection";
 import GalleryCarousel  from "./components/GalleryCarousel";
 import RSVPForm from "./components/RSVPForm";
 import StarBackground from "./components/StarBackground";
-// import AudioPlayer from "./components/AudioPlayer";
+import AudioPlayer from "./components/AudioPlayer";
 
 const couple = import.meta.env.VITE_COUPLE || "rahul-priya";
 const side   = import.meta.env.VITE_SIDE   || "bride";
@@ -24,9 +24,9 @@ export default function App() {
       <StarBackground />
 
       {/* Audio — fixed button, always visible after open */}
-      {/* {opened && (
-        <AudioPlayer src="/audio/wedding-song.mp3" />
-      )} */}
+      {opened && (
+        <AudioPlayer src="/audio/wedding-instrumental.mpeg" />
+      )}
 
       {!opened ? (
         // Page 1: Curtain
