@@ -1,11 +1,12 @@
 import { useState } from "react";
 import CurtainOpener from "./components/CurtainOpener";
-import HeroPage      from "./components/HeroPage";
-import InviteCard    from "./components/InviteCard";
-import LoveStory        from "./components/LoveStory";
-import VenueSection     from "./components/VenueSection";
+import HeroPage from "./components/HeroPage";
+import InviteCard from "./components/InviteCard";
+import LoveStory from "./components/LoveStory";
+import VenueSection from "./components/VenueSection";
 import GalleryCarousel  from "./components/GalleryCarousel";
-import RSVPForm      from "./components/RSVPForm";
+import RSVPForm from "./components/RSVPForm";
+// import AudioPlayer from "./components/AudioPlayer";
 
 const couple = import.meta.env.VITE_COUPLE || "rahul-priya";
 const side   = import.meta.env.VITE_SIDE   || "bride";
@@ -19,10 +20,16 @@ export default function App() {
   return (
     <div style={{ width: "100%", minHeight: "100vh" }}>
 
+      {/* Audio — fixed button, always visible after open */}
+      {/* {opened && (
+        <AudioPlayer src="/audio/wedding-song.mp3" />
+      )} */}
+
       {!opened ? (
         // Page 1: Curtain
         <CurtainOpener
           common={commonConfig}
+          sideConfig={sideConfig}
           onOpen={() => setOpened(true)}
         />
       ) : (
