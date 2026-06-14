@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../styles/CurtainOpener.css";
 
-export default function CurtainOpener({ common, onOpen }) {
+export default function CurtainOpener({ common, sideConfig, onOpen }) {
   const [opening, setOpening] = useState(false);
+  const isBride = sideConfig.side === "bride";
 
   const handleOpen = () => {
     setOpening(true);
@@ -59,9 +60,9 @@ export default function CurtainOpener({ common, onOpen }) {
       <div className="curtain-center">
         <p className="invite-label">The Wedding of</p>
         <div className="names-row">
-          <span className="person-name">{common.groom}</span>
+          <span className="person-name">{isBride ? common.bride : common.groom}</span>
           <span className="heart-icon">♥</span>
-          <span className="person-name">{common.bride}</span>
+          <span className="person-name">{isBride ? common.groom : common.bride}</span>
         </div>
         <div className="gold-divider" />
         <p className="wedding-date">{common.weddingDateDisplay}</p>

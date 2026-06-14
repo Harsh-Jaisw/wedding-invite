@@ -190,3 +190,10 @@
   .form-row { grid-template-columns: 1fr; }
   .rsvp-card { padding: 28px 16px; }
 }
+
+@media (min-width: 400px) {
+  .rsvp-card { 
+    max-width: none;
+    width: 90%;
+   }
+}
