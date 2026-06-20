@@ -55,7 +55,7 @@ groom: "Aditya",
             parents: "Mr. Virendra & Mrs. Mamta Bajpai",
             members: [
                 { name: "Late. Shri Ram jivan bajpai ", relation: "Grandfather" },
-                { name: "Late. Shrmimati Shyama devi",   relation: "Grandmother" }
+                { name: "Late. Shrimati Shyama devi",   relation: "Grandmother" }
             ],
         },
         bride: {
