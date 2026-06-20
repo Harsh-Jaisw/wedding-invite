@@ -1,25 +1,49 @@
 import { useState } from "react";
 import "../styles/RSVPForm.css";
 
+const SCRIPT_URL = import.meta.env.VITE_RSVP_SCRIPT_URL;
+const SIDE = import.meta.env.VITE_SIDE || "bride";
+
 export default function RSVPForm({ common }) {
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     guests: "",
-    attendance: "",
+    attendance: "attending",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: connect to your backend / Firebase / EmailJS
-    console.log("RSVP submitted:", form);
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", // Google Apps Script requires no-cors from browser
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify({
+          side: SIDE,
+          ...form,
+        }),
+      });
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("RSVP submit failed:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -71,6 +95,7 @@ export default function RSVPForm({ common }) {
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
+                maxLength={10}
                 value={form.phone}
                 onChange={handleChange}
                 required
@@ -119,8 +144,10 @@ export default function RSVPForm({ common }) {
             />
           </div>
 
-          <button type="submit" className="rsvp-submit-btn">
-            Send RSVP
+          {error && <p className="rsvp-error">{error}</p>}
+
+          <button type="submit" className="rsvp-submit-btn" disabled={loading}>
+            {loading ? "Sending..." : "Send RSVP"}
           </button>
         </form>
       </div>
