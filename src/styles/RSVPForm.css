@@ -109,6 +109,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
+  text-align: left;
 }
 
 .form-group input,
@@ -116,7 +117,7 @@
 .form-group textarea {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
-  color: rgba(255,255,255,0.85);
+  color: rgb(226 227 32 / 85%);
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(218,165,32,0.25);
   border-radius: 3px;
@@ -186,7 +187,7 @@
   margin: 0;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
   .form-row { grid-template-columns: 1fr; }
   .rsvp-card { padding: 28px 16px; }
 }
@@ -196,4 +197,12 @@
     max-width: none;
     width: 90%;
    }
+}
+
+.rsvp-error {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  color: #ff6b6b;
+  text-align: center;
+  margin: 0;
 }
